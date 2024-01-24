@@ -1,109 +1,47 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
-    }
-    
-    body{
-    background: linear-gradient(90deg,#974d6a 0%, rgb(92, 18, 46) 100%);
+    margin: 50;
+    padding: 100;
+    background-image: url(https://i.pinimg.com/736x/32/28/1e/32281eecca763b72910985d7dd6fc12f.jpg);
+    cursor: pointer;
+}
+
+.container{
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
-    
-    }
-    
-    .container{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    }
-    
-    .button{
-    border: none;
-    outline: none;
-    background: rgb(88, 34, 34);
-    color: rgb(255, 255, 255);
-    font-size:1.5rem;
-    font-family: sans-serif;
-    margin: 1rem;
-    padding: 5dvw 3rem;
-    box-shadow: 5px 5px 0px rgb(182, 87, 166);
-    border-radius: 100px;
-    text-align: center;
-    z-index: 1;
-    transition: .5s;
-    }
-    
-    &.active{
-    transform: translate(5%, 5%);
-    box-shadow: 0px 0px 0px rgb(104, 14, 29);
-    
-    }
-    
-    .notification{
-    width: 12pt;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: inherit;
+    width: 100%;
+    height: 100vh;
+    flex-wrap: wrap;
+    overflow: hidden;
+}
+
+.container span{
     position: relative;
-    color: transparent;
-    
-    &::after{
-    min-width: 15px;
-    min-height: 15px;
-    content:attr(data-count);
-    color:white;
     display: flex;
     justify-content: center;
-    align-self: center;
-    background-color: rgb(160, 146, 69);
-    border-radius:50%;
+    align-items: center;
+    min-height: 100px;
+    min-width: 100px;
+}
+
+.container span::before{
+    content: '';
     position: absolute;
-    top:-4px;
-    right:7px;
-    transition: 0.3s;
-    opacity:0;
-    transform:scale(0.5);
-    }
-    
-    &::before{
-    content:'\f0f3';
-    font-family: 'Font Awesome 5 Free';
-    display: block;
-    color: black;
-    font-size: 3rem;
-    margin-bottom: 1rem;
-    
-    }
-    
-    &.count::after{
+    background: url(https://static.labiennale.org/files/styles/full_screen_slide/public/cinema/2023/Schede_film/970x647/Venezia_80/priscilla.jpg?itok=BnNYQKzg);
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+    transition: 10s;
+    opacity: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+}
+
+.container span:hover::before{
+    transition: 0s;
     opacity: 1;
-    transform: scale(1);
-    
-    }
-    
-    &.notify::before{
-    animation: belltambol 0.5s ease-in-out;
-    }
-    }
-    
-    @keyframes belltambol {
-    0%{
-    transform: rotate(0deg);
-    }
-    25%{
-    transform: rotate(15deg);
-    }
-    25%{
-    transform: rotate(-15deg);
-    }
-    75%{
-    transform: rotate(15deg);
-    }
-    100%{
-    transform: rotate(0deg);
-    }
-    }
+    width: 100%;
+    height: 100%;
+}
